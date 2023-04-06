@@ -136,5 +136,4 @@ console.log( email7.endsWith(".com") )
     7.2) en caso de cumplir TODOS los requisitos, muestra un mensaje en pantalla con el nombre del usuario
     y un mensaje de felicidades, usuario registrado.
     8) Adicional, muestra un mensaje preguntando si desea reiniciar el proceso (Sin Loops)
-
 */
