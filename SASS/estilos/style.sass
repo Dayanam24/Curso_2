@@ -1,9 +1,168 @@
-@import "./componentes/_globales"
-@import "./componentes/_body"
-@import "./componentes/_cajas"
-@import "./componentes/_each"
-@import "./componentes/_condicionales"
-@import "./componentes/_bucles"
+/* Variables */
+$color1: linear-gradient(gray,black)
+$color2: linear-gradient(#b0e60f,#293602)
+$ancho: 300px
+$colorvar1: green
+$colorvar2: blue
+
+/* Mixins */
+@mixin flexColCenter()
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+/* Mixin con Parametros */
+@mixin flexible($param1,$param2,$param3,$param4)
+    display: $param1
+    flex-direction: $param2
+    justify-content: $param3
+    align-items: $param4
+
+/* SUPER Mixin */
+@mixin superMixin($param1,$param2,$param3,$param4,$param5,$param6,$param7,$param8,$param9)
+    display: $param1
+    flex-direction: $param2
+    grid-template-columns: $param3
+    justify-content: $param4
+    align-items: $param5
+    place-items: $param6
+    width: $param7
+    height: $param8
+    background: $param9 
+
+/* Sintaxis del formato SASS */
+*
+    box-sizing: border-box
+    margin: 0px
+    top: 0px
+
+@mixin animacion($nombre, $duracion, $funcionDeTiempo, $delay, $estado, $repeticiones, $direccion)
+    animation: $nombre $duracion $funcionDeTiempo $delay $estado $repeticiones $direccion
+
+@keyframes miAnimacion
+    0%
+        background: red
+    33%
+        background: blue
+    66%
+        background: yellow
+    100%
+        background: green
+
+#cajaAnimada
+    background: pink
+    @include animacion($nombre: miAnimacion, $duracion:5s , $funcionDeTiempo:linear , $delay:500ms , $estado:running, $repeticiones: infinite, $direccion: alternate )
+
+/* Anidamiento */
+body
+    width: 100%
+    /*body main*/
+    main
+        width: 100%
+        background: $color1
+        div
+            @include flexible(flex,column,flex-start,center)
+            img
+                width: $ancho
+        section
+            @include superMixin(flex,column,null,center,center,null,100%,500px,$color2)   
+
+/*	
+    Metodologia BEM(Block, Element, Modifier / Bloque, Elemento, Modificador) 
+    se utiliza para abreviar selecciones.
+    */
+
+.caja-bem
+    @include superMixin(flex,column,null,center,center,null,100%,500px,blue)
+    gap: 10px
+    /*& Equivale a: .caja-bem por lo tanto, &_hijo equivale a: .caja-bem_hijo*/
+    &_hijo
+        border: 3px solid white
+        padding: 10px
+        /*& Equivale a: .caja-bem por lo tanto, &_hijo equivale a: .caja-bem_hijo*/
+        &_parrafo
+            color: orange
+
+.caja-bem_2
+    @include superMixin(flex,column,null,center,center,null,100%,500px,purple)
+    /*&_parrafo: .caja-bem_2_parrafo */
+    &_parrafo
+        /*&: .caja-bem_2_parrafo | &_1: .caja-bem_2_parrafo_1 ..2 etc */
+        &_1
+            background: white
+        &_2
+            background: skyblue
+            color: white
+            cursor: pointer
+        &_2:hover
+            color: orange
+        &_2::first-letter
+            color: red
+        &_7
+            background: yellow
+        &_9
+            @extend .caja-bem_2_parrafo_2
+            border-radius: 10px
+        &_4
+            @extend .caja-bem_2_parrafo_9
+            padding: 10px
+    
+
+/*
+    each es una directiva que permite iterar (recorrer) sobre una lista y aplicar un conjunto
+    de declaraciones de estilo a cada elemento de la lista.
+    */
+
+.caja-parrafo
+    @include superMixin(flex,column,null,center,center,null,100%,500px,#aa7979)
+    gap: 10px
+
+$colores: red,blue,orange,purple,yellow,gray,skyblue,greenyellow,pink,aqua
+@each $color in $colores
+    /*.parrafo_purple*/
+    .parrafo_#{$color}
+        color: $color
+        background: #3b3a3a
+        padding: 5px
+        border-radius:10px
+
+
+$numeros: 5,7,9,11,13,15,17,19,21,23
+@each $elemento in $numeros
+    /*.parrafo_purple*/
+    .parrafo_#{$elemento}
+        color: red
+        background: #3b3a3a
+        font-size: $elemento + px
+        padding: 5px
+        border-radius:10px
+
+
+// Condicionales
+$color: red
+
+.claseCaja
+    @if $color == red 
+        background-color: $color
+    @else
+        background-color: blue
+
+// Bucles For y Each
+
+// For
+@for $counter from 1 through 5 
+    .elemento-#{$counter} 
+        width: 50px * $counter
+        height: 50px * $counter
+
+
+// Each
+$listaDeColors: red, green, blue
+
+@each $color in $listaDeColors 
+    .bg-#{$color}
+        background-color: $color
 
 /*
     Funciones

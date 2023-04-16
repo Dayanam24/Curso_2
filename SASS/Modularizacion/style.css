@@ -1,0 +1,350 @@
+@charset "UTF-8";
+/* Variables */
+/* Mixins */
+/* Mixin con Parametros */
+/* SUPER Mixin */
+/* Sintaxis del formato SASS */
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  top: 0px;
+}
+
+@keyframes miAnimacion {
+  0% {
+    background: red;
+  }
+  33% {
+    background: blue;
+  }
+  66% {
+    background: yellow;
+  }
+  100% {
+    background: green;
+  }
+}
+#cajaAnimada {
+  background: pink;
+  animation: miAnimacion 5s linear 500ms running infinite alternate;
+}
+
+/* Anidamiento */
+body {
+  width: 100%;
+  /*body main*/
+}
+body main {
+  width: 100%;
+  background: linear-gradient(gray, black);
+}
+body main div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main div img {
+  width: 300px;
+}
+body main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(#b0e60f, #293602);
+}
+
+/*  Metodologia BEM(Block, Element, Modifier / Bloque, Elemento, Modificador) 
+ *  se utiliza para abreviar selecciones.
+ *  */
+.caja-bem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: blue;
+  gap: 10px;
+  /*& Equivale a: .caja-bem por lo tanto, &_hijo equivale a: .caja-bem_hijo*/
+}
+.caja-bem_hijo {
+  border: 3px solid white;
+  padding: 10px;
+  /*& Equivale a: .caja-bem_hijo por lo tanto, &_parrafo equivale a: .caja-bem_hijo_parrafo*/
+}
+.caja-bem_hijo_parrafo {
+  color: orange;
+}
+
+.caja-bem_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: purple;
+  /*&_parrafo: .caja-bem_2_parrafo */
+}
+.caja-bem_2_parrafo {
+  /*&: .caja-bem_2_parrafo | &_1: .caja-bem_2_parrafo_1 ..2 etc */
+}
+.caja-bem_2_parrafo_1 {
+  background: white;
+}
+.caja-bem_2_parrafo_2, .caja-bem_2_parrafo_4, .caja-bem_2_parrafo_9 {
+  background: skyblue;
+  color: white;
+  cursor: pointer;
+}
+.caja-bem_2_parrafo_2:hover, .caja-bem_2_parrafo_4:hover, .caja-bem_2_parrafo_9:hover {
+  color: orange;
+}
+.caja-bem_2_parrafo_2::first-letter, .caja-bem_2_parrafo_4::first-letter, .caja-bem_2_parrafo_9::first-letter {
+  color: red;
+}
+.caja-bem_2_parrafo_7 {
+  background: yellow;
+}
+.caja-bem_2_parrafo_4, .caja-bem_2_parrafo_9 {
+  border-radius: 10px;
+}
+.caja-bem_2_parrafo_9 {
+  padding: 10px;
+}
+
+/*  each es una directiva que permite iterar (recorrer) sobre una lista y aplicar un conjunto
+ *  de declaraciones de estilo a cada elemento de la lista.
+ *  */
+.caja-parrafo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: #aa7979;
+  gap: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_red {
+  color: red;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_blue {
+  color: blue;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_orange {
+  color: orange;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_purple {
+  color: purple;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_yellow {
+  color: yellow;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_gray {
+  color: gray;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_skyblue {
+  color: skyblue;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_greenyellow {
+  color: greenyellow;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_pink {
+  color: pink;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_aqua {
+  color: aqua;
+  background: #3b3a3a;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_5 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_7 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 7px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_9 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 9px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_11 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 11px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_13 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_15 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_17 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 17px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_19 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 19px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_21 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 21px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*.parrafo_purple*/
+.parrafo_23 {
+  color: red;
+  background: #3b3a3a;
+  font-size: 23px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.claseCaja {
+  background-color: red;
+}
+
+.elemento-1 {
+  width: 50px;
+  height: 50px;
+}
+
+.elemento-2 {
+  width: 100px;
+  height: 100px;
+}
+
+.elemento-3 {
+  width: 150px;
+  height: 150px;
+}
+
+.elemento-4 {
+  width: 200px;
+  height: 200px;
+}
+
+.elemento-5 {
+  width: 250px;
+  height: 250px;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+/*  Funciones
+ *      transparentize($color, $nivel): Hace $color más transparente incrementando el canal alpha 
+ *      con un $nivel entre 0 y 1. Es idéntico a fade-out($color, $nivel).
+ *      grayscale($color): Devuelve un color en escala de grises con el mismo lightness que $color. 
+ *      Es idéntico a change-color($color, $saturation: 0%).
+ *  *//*# sourceMappingURL=style.css.map */

@@ -10,7 +10,7 @@
     &_hijo
         border: 3px solid white
         padding: 10px
-        /*& Equivale a: .caja-bem por lo tanto, &_hijo equivale a: .caja-bem_hijo*/
+        /*& Equivale a: .caja-bem_hijo por lo tanto, &_parrafo equivale a: .caja-bem_hijo_parrafo*/
         &_parrafo
             color: orange
 
@@ -31,9 +31,9 @@
             color: red
         &_7
             background: yellow
-        &_9
+        &_4
             @extend .caja-bem_2_parrafo_2
             border-radius: 10px
-        &_4
-            @extend .caja-bem_2_parrafo_9
+        &_9
+            @extend .caja-bem_2_parrafo_4
             padding: 10px
