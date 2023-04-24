@@ -38,9 +38,9 @@ console.log(nombres);
 // El segundo parametro es un callback, una funcion.
 // Esta funcion va a llamar de vuelta (callback) datos de la funcion "agregar".
 
-agregar(nombres, ()=>{console.log(nombres)},"Diego");
+agregar(nombres, ()=>{ console.log(nombres) }, "Diego");
 
-agregar(nombres, function(){console.log(nombres)},"Daniel");
+agregar(nombres, function(){ console.log(nombres) },"Daniel");
 
 
 
@@ -296,3 +296,10 @@ agregarProducto(
     se vuelve parte de tu experiencia.
 
 */
+
+
+
+
+
+
+

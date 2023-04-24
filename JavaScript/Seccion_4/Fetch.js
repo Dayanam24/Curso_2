@@ -13,21 +13,34 @@
 // .catch() contiene una funcion para tratar los errores, en este caso muestra un mensaje en consola.
 
 
-const buscar = fetch("https://rickandmortyapi.com/api/character/485");
+const buscar = fetch("https://rickandmortyapi.com/api/character/820");
+let datosObtenidos;
 
-buscar
-    .then(
-        (respuesta)=>{
-            console.log(`Esto es el JSON: ${respuesta}`)
-            return respuesta.json()
-        }
-    )
-    .then(
-        respuesta => {
-            console.log(`Esto es el JSON luego de ser transformado a objeto`)
-            console.log(respuesta)
-        }
-    )
-    .catch(
-        err => console.log(`Error: ${err}`)
-    )
+try{
+    buscar
+        .then(
+            (respuesta)=>{
+                console.log(`Esto es el JSON: ${respuesta}`)
+                return respuesta.json()
+            }
+        )
+        .then(
+            respuesta => {
+                console.log(`Esto es el JSON luego de ser transformado a objeto`)
+                console.log(respuesta)
+                document.getElementById("imagen").setAttribute("src",respuesta.image)
+                document.getElementById("nombre").innerText = respuesta.name;
+                document.getElementById("ciudad").innerText = respuesta.location.name;
+                document.getElementById("especie").innerText = respuesta.species;
+            }
+        )
+        .catch(
+            err => console.log(`Error: ${err}`)
+        )
+}
+catch(err){
+    console.log(err)
+}
+
+
+
