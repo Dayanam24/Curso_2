@@ -90,5 +90,17 @@ verPropiedad();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Ejercicio 2
 // Elabora una funcion que pruebe un bloque y retorne la excepcion en el bloque catch en caso de existir.
