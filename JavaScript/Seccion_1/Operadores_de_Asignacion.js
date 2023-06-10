@@ -1,4 +1,4 @@
-/* Asignacion = : como bien su nombre indica se utiliza para asignar un valor. */
+0/* Asignacion = : como bien su nombre indica se utiliza para asignar un valor. */
 
 
 // Variable asignada como string (cadena de texto)
