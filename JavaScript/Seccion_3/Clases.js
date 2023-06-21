@@ -135,11 +135,25 @@ class Auto{
     }
 
     avanzar() {
-        return ("El auto esta en marcha");
+        if(this.Avanzar == false){
+            this.Avanzar = true;
+            this.Detener = false;
+            return ("El auto esta en marcha");  
+        }else if(this.Detener == true){
+            return ("El auto se detuvo");
+        }
+        
     }
 
     detener() {
-        return ("El auto se detuvo");
+        if(this.Detener == false){
+            this.Deterne = true;
+            this.Avanzar = false
+            return ("El auto se detuvo");
+        }else if(this.Avanzar == true){
+            return ("El auto esta en marcha");
+        }
+        
     }
 }
 

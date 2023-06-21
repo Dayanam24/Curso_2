@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,4 +20,40 @@
         <!-- Importamos nuestro archivo JavaScript -->
         <script type="module" src="./Axios.js"></script>
     </body>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="personaje" src="" alt="Personaje">
+        <p id="nombre">1</p>
+        <p id="ubicacion">2</p>
+        <p id="especie">3</p>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Realizamos una solicitud tipo GET con Axios a la api de Rick and Morthy
+            axios.get("https://rickandmortyapi.com/api/character/1")
+                .then(
+                    (respuesta)=> { 
+                        console.log(respuesta) 
+                        document.getElementById("personaje").setAttribute("src",respuesta.data.image)
+                        document.getElementById("nombre").innerText = respuesta.data.name
+                        document.getElementById("ubicacion").innerText = respuesta.data.location.name
+                        document.getElementById("especie").innerText = respuesta.data.species
+                    }
+                )
+                .catch(
+                    (error)=>{ console.log(error) }
+                );
+    </script>
+
+
+
+>>>>>>> a5f39ad531306583d673801517595dc2ca20b352
 </html>

@@ -23,6 +23,10 @@ function imprimirSaludo(){
     console.log("Este mensaje se muestra desde una funcion")
 }
 
+//& = dos valores verdaderos, verdadero y verdadero
+
+//operador ternario: ? verdadero : falso
+
 // imprimirSaludo()
 
 // if(nombre === "Diego"){
