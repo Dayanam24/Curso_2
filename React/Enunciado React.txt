@@ -1,0 +1,25 @@
+Realizar una página web consumiendo la API de tu preferencia (con o sin key).
+
+Este sitio web debe tener:
+
+1) Página principal donde se muestre elementos en una cuadrícula con paginación.
+
+2) Página de elementos individuales también con paginacion.
+
+
+Será necesario usar: hooks, y react router DOM, y NavLink para crear un menu de navegacion que contenga isActive.
+Es requerido crear:
+  - Una carpeta componentes para los elementos reutilizables.
+  - Una carpeta Hooks para los llamados a la API.
+  - Una carpeta Views para las vistas que se renderizaran.
+
+No se permite el uso de la API de Rick and Morthy, ni de Pokemon (Please 😅).
+
+Opcional :
+- Usar props
+- Para el css puedes usar lo que más te guste (CSS, Tailwind, SASS, incluso librerías de animación).
+- Si deseas puedes investigar un hook nuevo como: useNavigate, useRef, useContext y determinar como lo usaras en tu proyecto.
+
+
+Fecha de inicio: 19/06/23
+Fecha de entrega: 30/06/23

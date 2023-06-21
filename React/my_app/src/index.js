@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Navbar from './components/Navbar';
 import ApiAxiosMap from './Hooks/ApiAxiosMap';
+import ApiAxiosKey from './Hooks/ApiAxiosKey';
 
 
 // Importamos las vistas a renderizar
@@ -31,6 +32,7 @@ root.render(
       <Route path="/register" element={<App />} />
       <Route path="/ApiAxios" element={<ApiAxiosView />} />
       <Route path="/ApiAxiosMap" element={<ApiAxiosMap />} />
+      <Route path="/ApiAxiosKey" element={<ApiAxiosKey />} />
     </Routes>
   </BrowserRouter>
 );

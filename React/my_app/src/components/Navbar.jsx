@@ -38,6 +38,9 @@ const Navbar = () => {
             <span>
                 <NavLink to="/ApiAxiosMap" style={cambiarColor}>Api Mapeo</NavLink>
             </span>
+            <span>
+                <NavLink to="/ApiAxiosKey" style={cambiarColor}>Api Key</NavLink>
+            </span>
         </nav>
     );
 }
