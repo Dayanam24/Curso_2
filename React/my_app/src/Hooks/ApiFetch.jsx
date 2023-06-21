@@ -28,6 +28,6 @@ const ApiFetch = () => {
             </ul>
         </> 
     );
-}
+} 
 
 export default ApiFetch;
