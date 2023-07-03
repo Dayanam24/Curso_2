@@ -18,7 +18,7 @@ const ApiAxios = () => {
     async function obtenerDatos(){
         try{
             const res = await axios.get(`https://rickandmortyapi.com/api/character/${pagina}`);
-            console.table(res.data.image);
+            console.table(res.data.image); 
 
             if(res.status === 200){
                 setPersonaje(res.data);
@@ -40,7 +40,7 @@ const ApiAxios = () => {
         textos: "grid grid-cols-2 gap-4" ,
         Caja: "bg-white/20 flex items-center pl-0 h-[auto] pl-4 rounded-2xl shadow-[-7px_15px_15px_3px_rgba(0,0,0,0.3)]",
         Imagen: "rounded-r-lg w-[180px] h-[180px] shadow-md shadow-stone-900 ml-6",
-        Parrafo: "text-white font-bold text-xl w-[300px] drop-shadow-lg",
+        Parrafo: "text-white w-[300px] drop-shadow-lg",
         Span: "hover:text-orange-800",
         Boton: "bg-white/25 rounded-full text-white font-['roboto'] p-2 shadow-[-3px_8px_10px_3px_rgba(0,0,0,0.3)]"
     };

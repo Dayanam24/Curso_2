@@ -33,6 +33,7 @@ const ApiAxiosKey = () => {
     return ( 
         <>
             <h1>ApiAxiosKey</h1>
+            
             <div className='grid grid-cols-4 gap-3'>
                 {listaJuegos.map((juego) => (
                     <div key={juego.id}>
