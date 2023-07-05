@@ -1,0 +1,6 @@
+Para compilar un archivo de formato .ts a un archivo .js
+es necesario abrir en la terminal la carpeta donde se encuentra el archivo e
+introducir el comando: tsc nombreDelArchivo.ts -w 
+
+Esto iniciara la compilacion y adicionalmente activara el modo Watch que tras cada 
+cambio en el archivo indicado .ts se actualice el archivo .js
